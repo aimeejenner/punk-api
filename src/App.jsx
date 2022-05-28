@@ -1,27 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from  './App.module.scss';
 
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
 
-import getBeers from "./services/beer-service";
+// import getBeers from "./services/beer.service";
 
 const App = () => {
   const [beers, setBeers] = useState([]);
 
-  const updateBeers = async (searchTerm) => {
-    const apiBeers = await getBeers(searchTerm);
+  const getBeers = () => {
+    return fetch("https://api.punkapi.com/v2/beers")
+      .then((res) => res.json())
+      .then((jsonResponse) => {
+          setBeers(jsonResponse);
+      })
+}
 
-    setBeers(apiBeers);
-  }
+  useEffect(() => {
+    getBeers()
+  }, [beers])
 
   return (
-    <div className={styles.app}>
+    <div className={styles.app}>  
       <section className={styles.nav}>
         <Navbar />
       </section>
       <section className={styles.content}>
-        <Main />
+        <Main beers={beers} />
       </section>
     </div>
   );
