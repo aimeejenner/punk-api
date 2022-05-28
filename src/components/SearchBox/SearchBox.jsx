@@ -1,8 +1,16 @@
 import React from 'react';
+import styles from "./SearchBox.module.scss";
 
-const SearchBox = () => {
+const SearchBox = (props) => {
+  const { placeholder, updateSearchText } = props; 
+
+  const input = <input className={styles.input} type="text" id="search" placeholder={placeholder} onInput={e => updateSearchText(e.target.value)} />;
+
   return (
-    <div>SearchBox Works</div>
+    <div className={styles.search}>
+      {input}
+      <label for="search">Search</label>
+    </div>
   )
 }
 

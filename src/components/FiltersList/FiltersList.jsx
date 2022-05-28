@@ -1,8 +1,15 @@
 import React from 'react';
+import styles from "./FiltersList.module.scss";
+
+import FilterItem from "../FilterItem";
 
 const FiltersList = () => {
+  const filters = ["ABV", "classic", "acidity"];
+
   return (
-    <div>FiltersList Works</div>
+    filters.map((filter) => (
+      <div><FilterItem filter={filter} /></div>
+    ))
   )
 }
 

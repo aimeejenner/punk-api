@@ -1,8 +1,13 @@
 import React from 'react';
 
-const FilterItem = () => {
+const FilterItem = (props) => {
+  const { filter } = props;
+
   return (
-    <div>FilterItem Works</div>
+    <div>
+      <input type="checkbox" label={filter} value={filter} />
+      <label for={filter}>{filter}</label>
+    </div>
   )
 }
 

@@ -1,11 +1,15 @@
 import React from 'react';
 import styles from "./Navbar.module.scss";
 
+import SearchBox from "../SearchBox";
+import FiltersList from "../FiltersList";
+
 const Navbar = () => {
   return (
-    <div className={styles.navbar}>
-      Navbar Works
-    </div>
+    <section className={styles.navbar}>
+      <SearchBox />
+      <FiltersList />
+    </section>
   )
 }
 
