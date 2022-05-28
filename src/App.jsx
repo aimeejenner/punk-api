@@ -1,8 +1,15 @@
 import styles from  './App.module.scss';
 
+import Navbar from "./components/Navbar";
+import Main from "./components/Main";
+
 const App = () => {
+
   return (
-    <p className={styles.test}>App Works</p>
+    <section className={styles.app}>
+      <Navbar />
+      <Main />
+    </section>
   );
 }
 

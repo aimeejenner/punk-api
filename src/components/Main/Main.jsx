@@ -1,8 +1,13 @@
 import React from 'react';
+import styles from "./Main.module.scss";
+
+import CardList from '../CardList/CardList';
 
 const Main = () => {
   return (
-    <div>Main Works</div>
+    <div className={styles.main}>
+      <CardList />
+    </div>
   )
 }
 
