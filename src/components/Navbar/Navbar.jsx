@@ -4,10 +4,12 @@ import styles from "./Navbar.module.scss";
 import SearchBox from "../SearchBox";
 import FiltersList from "../FiltersList";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const {updateSearchText} = props;
+
   return (
     <section className={styles.navbar}>
-      <SearchBox />
+      <SearchBox placeholder="Search for beers..." updateSearchText={updateSearchText} />
       <FiltersList />
     </section>
   )
