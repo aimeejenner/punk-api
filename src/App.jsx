@@ -16,14 +16,8 @@ const App = () => {
   };
 
   useEffect(() => {
-    fetch("https://api.punkapi.com/v2/beers")
-      .then((res) => res.json())
-      .then((jsonResponse) => {
-        setBeers(jsonResponse)
-      })
-
       getBeers();
-  }, []);
+  }, [beers]);
 
   return (
     <div className={styles.app}>  

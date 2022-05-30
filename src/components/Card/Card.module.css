@@ -3,12 +3,13 @@
   flex-direction: column;
   height: 350px;
   width: 300px;
-  border: 2px solid black;
+  border: 2px solid hotpink;
   border-radius: 10px;
   justify-content: center;
   align-items: center;
   padding: 10px;
   margin: 5px;
+  background-color: white;
 }
 
 .image {
