@@ -3,9 +3,8 @@ import styles from "./CardList.module.scss";
 
 import Card from '../Card/Card';
 
-import beers from "../../data/beers";
-
-const CardList = () => {
+const CardList = (props) => {
+  const {beers} = props;
   
   const getBeersJsx = () => {
     return beers.map((beer) => (

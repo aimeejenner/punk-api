@@ -9,7 +9,6 @@ const SearchBox = (props) => {
   return (
     <div className={styles.search}>
       {input}
-      <label for="search">Search</label>
     </div>
   )
 }
