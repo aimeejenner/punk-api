@@ -19,5 +19,8 @@ var getBeers = function getBeers(searchTerm) {
   });
 };
 
-var _default = getBeers;
+var _default = getBeers; // high alcohol - https://api.punkapi.com/v2/beers?abv_gt=6
+// classic range - https://api.punkapi.com/v2/beers?brewed_before=01-2010
+// high acidity - getBeers then return beers where .ph property < 4
+
 exports["default"] = _default;

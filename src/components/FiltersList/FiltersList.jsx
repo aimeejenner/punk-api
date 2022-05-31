@@ -4,14 +4,17 @@ import styles from "./FiltersList.module.scss";
 import FilterItem from "../FilterItem";
 
 const FiltersList = (props) => {
-  const {beers, API_URL, selected} = props;
-  const filters = ["ABV", "classic", "acidity"];
-
+  const { beers, filterABV, filterClassic, filterAcidity } = props;
 
   return (
-    filters.map((filter) => (
-      <div><FilterItem beers={beers} API_URL={API_URL} selected={selected} /></div>
-    ))
+    <section className={styles.filters}>
+      <h3>High ABV</h3>
+      <FilterItem onSelect={() => filterABV()} />
+      <h3>Classic range</h3>
+      <FilterItem onSelect={() => filterClassic()} />
+      <h3>Low Ph</h3>
+      <FilterItem onSelect={() => filterAcidity()} />
+    </section>
   )
 }
 
