@@ -11,12 +11,17 @@ const Card = (props) => {
     ph 
   } = props.beer;
 
+  const shortenDetails = (details) => 
+    details.length < 100
+      ? details
+      : details.substring(0, 100) + "...";
+
   return (
     <div className={styles.card}>
       <img className={styles.image} src={image_url} alt="Beer image" />
       <h1 className={styles.name}>{name}</h1>
       <h2 className={styles.tagline}>{tagline}</h2>
-      {/* <p className={styles.description}>{description}</p> */}
+      <p className={styles.description}>{shortenDetails(description)}</p>
       <h3 className={styles.abv}>ABV {abv}</h3>
       <h3 className={styles.ph}>Ph {ph}</h3>
     </div>

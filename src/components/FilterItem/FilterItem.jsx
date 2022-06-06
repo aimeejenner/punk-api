@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const FilterItem = (props) => {
-  const { filterName, clicked } = props;
+  const { checked } = props;
+
+  const filterBox = <input type="checkbox" onClick={checked} />
 
   return (
-    <div>
-      <input type="checkbox" label={filterName} onClick={clicked} />
-    </div>
+    <div>{filterBox}</div>
   )
 }
 
