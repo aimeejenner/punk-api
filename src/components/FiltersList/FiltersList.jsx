@@ -9,11 +9,11 @@ const FiltersList = (props) => {
   return (
     <section className={styles.filters}>
       <h3>High ABV</h3>
-      <FilterItem onSelect={() => filterABV()} />
+      <FilterItem clicked={filterABV} />
       <h3>Classic range</h3>
-      <FilterItem onSelect={() => filterClassic()} />
+      <FilterItem clicked={filterClassic} />
       <h3>Low Ph</h3>
-      <FilterItem onSelect={() => filterAcidity()} />
+      <FilterItem clicked={filterAcidity} />
     </section>
   )
 }

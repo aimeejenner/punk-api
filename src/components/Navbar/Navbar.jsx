@@ -5,12 +5,12 @@ import SearchBox from "../SearchBox";
 import FiltersList from "../FiltersList";
 
 const Navbar = (props) => {
-  const {updateSearchText, filterABV} = props;
+  const {updateSearchText, filterABV, filterClassic, filterAcidity} = props;
 
   return (
     <section className={styles.navbar}>
       <SearchBox placeholder="Search for beers..." updateSearchText={updateSearchText} />
-      <FiltersList filterABV={filterABV} />
+      <FiltersList filterABV={filterABV} filterClassic={filterClassic} filterAcidity={filterAcidity} />
     </section>
   )
 }

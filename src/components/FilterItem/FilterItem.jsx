@@ -1,11 +1,11 @@
 import React from 'react';
 
 const FilterItem = (props) => {
-  const { filterName, selected } = props;
+  const { filterName, clicked } = props;
 
   return (
     <div>
-      <input type="checkbox" label={filterName} selected={selected} />
+      <input type="checkbox" label={filterName} onClick={clicked} />
     </div>
   )
 }

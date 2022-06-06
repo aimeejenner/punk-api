@@ -48,7 +48,7 @@ const App = () => {
   return (
     <div className={styles.app}>  
       <section className={styles.nav}>
-        <Navbar updateSearchText={updateBeers} />
+        <Navbar updateSearchText={updateBeers} filterABV={filterABV} filterClassic={filterClassic} filterAcidity={filterAcidity}  />
       </section>
       <section className={styles.content}>
         <Main beers={beers} />
