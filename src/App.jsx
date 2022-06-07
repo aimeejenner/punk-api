@@ -8,9 +8,6 @@ import getBeers from "./services/beer.service";
 
 const App = () => {
   const [beers, setBeers] = useState([]);
-  const [abvFilter, setAbvFilter] = useState(false);
-  const [classicFilter, setClassicFilter] = useState(false);
-  const [phFilter, setPhFilter] = useState(false);
 
   const updateBeers = async (searchTerm) => {
     const apiBeers = await getBeers(searchTerm);

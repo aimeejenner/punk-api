@@ -4,7 +4,13 @@ import styles from "./SearchBox.module.scss";
 const SearchBox = (props) => {
   const { placeholder, updateSearchText } = props; 
 
-  const input = <input className={styles.input} type="text" id="search" placeholder={placeholder} onInput={e => updateSearchText(e.target.value || null)} />;
+  const input = <input 
+    className={styles.input} 
+    type="text" 
+    id="search" 
+    placeholder={placeholder} 
+    onInput={e => updateSearchText(e.target.value || "_")} 
+  />;
 
   return (
     <div className={styles.search}>
