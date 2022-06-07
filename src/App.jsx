@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import styles from  './App.module.scss';
 
 import Navbar from "./components/Navbar";
@@ -9,10 +9,10 @@ import getBeers from "./services/beer.service";
 const App = () => {
   const [beers, setBeers] = useState([]);
 
-  const updateBeers = async (searchTerm) => {
+  const updateBeers = useCallback(async (searchTerm) => {
     const apiBeers = await getBeers(searchTerm);
     setBeers(apiBeers);
-  };
+  }, []);
 
   const filterABV = () => {
     const highABV = beers.filter(beer => beer.abv > 6);
@@ -36,6 +36,10 @@ const App = () => {
         setBeers(jsonResponse);
       });
 }, []);
+
+// useEffect(() => {
+//   getBeers("_")
+// }, []);
 
 
   return (
