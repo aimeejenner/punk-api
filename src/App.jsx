@@ -19,13 +19,8 @@ const App = () => {
 
   const filterABV = () => {
     if (!abv) {
-      fetch("https://api.punkapi.com/v2/beers?per_page=80")
-      .then((res) => res.json())
-      .then((jsonResponse) => {
-        setBeers(jsonResponse);
-      });
-    }
-    if(abv) {
+      updateBeers("_");
+    } else {
       const highABV = beers.filter(beer => beer.abv > 6);
       setBeers(highABV);
     }
@@ -34,14 +29,9 @@ const App = () => {
 
   const filterClassic = () => {
     if (!classic) {
-      fetch("https://api.punkapi.com/v2/beers?per_page=80")
-      .then((res) => res.json())
-      .then((jsonResponse) => {
-        setBeers(jsonResponse);
-      });
-    }
-    if (classic) {
-      const classicBeers = beers.filter(beer => beer.first_brewed < 2010);
+      updateBeers("_");
+    } else {
+      const classicBeers = beers.filter(beer => Number(beer.first_brewed.slice(3)) < 2010);
       setBeers(classicBeers);
     }
     setClassic(!classic);
@@ -49,30 +39,17 @@ const App = () => {
 
   const filterAcidity = () => {
     if (!ph) {
-      fetch("https://api.punkapi.com/v2/beers?per_page=80")
-      .then((res) => res.json())
-      .then((jsonResponse) => {
-        setBeers(jsonResponse);
-      });
-    }
-    if (ph) {
+      updateBeers("_");
+    } else {
       const lowPhBeers = beers.filter(beer => beer.ph < 4);
       setBeers(lowPhBeers);
     }
     setPh(!ph);   
   }
 
-  useEffect(() => {
-    fetch("https://api.punkapi.com/v2/beers?per_page=80")
-      .then((res) => res.json())
-      .then((jsonResponse) => {
-        setBeers(jsonResponse);
-      });
+useEffect(() => {
+  updateBeers("_")
 }, []);
-
-// useEffect(() => {
-//   getBeers("_")
-// }, []);
 
 
   return (

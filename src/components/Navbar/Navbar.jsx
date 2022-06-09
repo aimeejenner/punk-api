@@ -10,7 +10,12 @@ const Navbar = (props) => {
   return (
     <section className={styles.navbar}>
       <SearchBox placeholder="Search for beers..." updateSearchText={updateSearchText} />
-      <FiltersList handleFilterChange={handleFilterChange} setABVFilter={setABVFilter} setClassicFilter={setClassicFilter} setPhFilter={setPhFilter} />
+      <FiltersList 
+        handleFilterChange={handleFilterChange} 
+        setABVFilter={setABVFilter} 
+        setClassicFilter={setClassicFilter} 
+        setPhFilter={setPhFilter} 
+      />
     </section>
   )
 }

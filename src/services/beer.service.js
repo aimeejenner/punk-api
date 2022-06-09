@@ -7,7 +7,7 @@ const API_URL = "https://api.punkapi.com/v2/beers";
  * @param {string} searchTerm
  */
  const getBeers = (searchTerm) => {
-    return fetch(`${API_URL}?beer_name=${searchTerm}`)
+    return fetch(`${API_URL}?beer_name=${searchTerm}&per_page=80`)
       .then((res) => res.json())
       .then((jsonResponse) => {
         return jsonResponse;
@@ -15,6 +15,14 @@ const API_URL = "https://api.punkapi.com/v2/beers";
   };
 
 export default getBeers;
+
+//   useEffect(() => {
+//     fetch("https://api.punkapi.com/v2/beers?per_page=80")
+//       .then((res) => res.json())
+//       .then((jsonResponse) => {
+//         setBeers(jsonResponse);
+//       });
+// }, []);
 
 
 // high alcohol - https://api.punkapi.com/v2/beers?abv_gt=6

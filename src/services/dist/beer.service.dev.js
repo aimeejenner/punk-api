@@ -12,14 +12,21 @@ var API_URL = "https://api.punkapi.com/v2/beers";
  */
 
 var getBeers = function getBeers(searchTerm) {
-  return fetch("".concat(API_URL, "?beer_name=").concat(searchTerm)).then(function (res) {
+  return fetch("".concat(API_URL, "?beer_name=").concat(searchTerm, "&per_page=80")).then(function (res) {
     return res.json();
   }).then(function (jsonResponse) {
     return jsonResponse;
   });
 };
 
-var _default = getBeers; // high alcohol - https://api.punkapi.com/v2/beers?abv_gt=6
+var _default = getBeers; //   useEffect(() => {
+//     fetch("https://api.punkapi.com/v2/beers?per_page=80")
+//       .then((res) => res.json())
+//       .then((jsonResponse) => {
+//         setBeers(jsonResponse);
+//       });
+// }, []);
+// high alcohol - https://api.punkapi.com/v2/beers?abv_gt=6
 // classic range - https://api.punkapi.com/v2/beers?brewed_before=01-2010
 // high acidity - getBeers then return beers where .ph property < 4
 

@@ -8,7 +8,8 @@ const Card = (props) => {
     tagline,
     description,
     abv,
-    ph 
+    ph,
+    first_brewed 
   } = props.beer;
 
   const shortenDetails = (details) => 
@@ -24,6 +25,7 @@ const Card = (props) => {
       <p className={styles.description}>{shortenDetails(description)}</p>
       <h3 className={styles.abv}>ABV {abv}</h3>
       <h3 className={styles.ph}>Ph {ph}</h3>
+      <h3 className={styles.brewed}>First brewed {first_brewed}</h3>
     </div>
   )
 }
