@@ -1,6 +1,12 @@
 .navbar {
-    min-height: 100vh;
+    height: 30vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media all and (min-width: 768px) {
+    .navbar {
+        min-height: 100vh;
+    } 
 }

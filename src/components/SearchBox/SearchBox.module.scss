@@ -1,9 +1,21 @@
 .search {
-    margin: 50px;
+    margin: 15px;
+
+    .input {
+        font-size: 14px;
+        height: 30px;
+        width: 170px;
+    }
 }
 
-.input {
-    font-size: 16px;
-    height: 40px;
-    width: 200px;
+@media all and (min-width: 768px) {
+    .search {
+        margin: 50px;
+
+        .input {
+            font-size: 16px;
+            height: 40px;
+            width: 200px;
+        }
+    } 
 }

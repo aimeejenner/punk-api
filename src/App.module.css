@@ -1,5 +1,13 @@
 .app {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   background-color: black;
+}
+
+@media all and (min-width: 768px) {
+  .app {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
 }
