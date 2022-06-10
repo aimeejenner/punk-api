@@ -3,35 +3,42 @@
   flex-direction: column;
   height: 350px;
   width: 300px;
-  border: 2px solid hotpink;
+  border: 2px solid #04aa44;
   border-radius: 10px;
   justify-content: center;
   align-items: center;
   padding: 15px;
   margin: 5px;
-  background-color: white;
+  background: #d8f1d0;
+  background: linear-gradient(#d8f1d0 0%, #f4fbf2 25%, white 34%);
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .image {
-  width: 30px;
+  height: 40%;
 }
 
 .name {
-  font-size: 18px;
-  color: green;
-  padding: 5px;
+  font-size: 20px;
+  color: #006800;
+  padding: 10px;
+  text-align: center;
 }
 
 .tagline {
   font-size: 16px;
-  padding-bottom: 20px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .description {
   font-size: 12px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .abv, .ph, .brewed {
   font-size: 12px;
+  color: #961396;
+  margin: 2px;
 }
