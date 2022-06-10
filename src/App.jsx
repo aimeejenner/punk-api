@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import styles from  './App.module.scss';
 
 import Navbar from "./components/Navbar";
@@ -12,10 +12,10 @@ const App = () => {
   const [classic, setClassic] = useState(true);
   const [ph, setPh] = useState(true);
 
-  const updateBeers = useCallback(async (searchTerm) => {
+  const updateBeers = async (searchTerm) => {
     const apiBeers = await getBeers(searchTerm);
     setBeers(apiBeers);
-  }, []);
+  };
 
   const filterABV = () => {
     if (!abv) {
