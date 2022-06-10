@@ -1,12 +1,12 @@
 import React from 'react';
 
 const FilterItem = (props) => {
-  const { handleFilterChange } = props;
+  const { filterName, handleFilterChange } = props;
 
   const filterBox = <input type="checkbox" onChange={(e) => handleFilterChange(e)} />
 
   return (
-    <div>{filterBox}</div>
+    <div>{filterName} {filterBox}</div>
   )
 }
 

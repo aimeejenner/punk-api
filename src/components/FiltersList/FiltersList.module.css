@@ -1,3 +1,14 @@
 .filters {
   color: white;
 }
+
+.filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.filter h3 {
+  font-size: 18px;
+  margin-right: 10px;
+}

@@ -8,12 +8,20 @@ const FiltersList = (props) => {
 
   return (
     <section className={styles.filters}>
-      <h3>High ABV</h3>
-      <FilterItem handleFilterChange={setABVFilter} />
-      <h3>Classic range</h3>
-      <FilterItem handleFilterChange={setClassicFilter} />
-      <h3>Low Ph</h3>
-      <FilterItem handleFilterChange={setPhFilter} />
+      <div className={styles.filter}>
+        <h3>High ABV</h3>
+        <FilterItem handleFilterChange={setABVFilter} />
+      </div>
+
+      <div className={styles.filter}>
+        <h3>Classic Range</h3>
+        <FilterItem handleFilterChange={setClassicFilter} />
+      </div>
+
+      <div className={styles.filter}>
+        <h3>Low Ph</h3>
+        <FilterItem handleFilterChange={setPhFilter} />
+      </div>
     </section>
   )
 }
