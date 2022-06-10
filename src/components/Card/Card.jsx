@@ -13,13 +13,13 @@ const Card = (props) => {
   } = props.beer;
 
   const shortenDetails = (details) => 
-    details.length < 100
+    details.length < 150
       ? details
       : details.substring(0, 100) + "...";
 
   return (
     <div className={styles.card}>
-      <img className={styles.image} src={image_url} alt="Beer image" />
+      <img className={styles.image} src={image_url} alt={name} />
       <h1 className={styles.name}>{name}</h1>
       <h2 className={styles.tagline}>{tagline}</h2>
       <p className={styles.description}>{shortenDetails(description)}</p>
