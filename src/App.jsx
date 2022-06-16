@@ -18,31 +18,31 @@ const App = () => {
   };
 
   const filterABV = () => {
-    if (!abv) {
-      updateBeers("_");
-    } else {
+    if (abv) {
       const highABV = beers.filter(beer => beer.abv > 6);
       setBeers(highABV);
+    } else {
+      updateBeers("_");
     }
     setAbv(!abv);
   }
 
   const filterClassic = () => {
-    if (!classic) {
-      updateBeers("_");
-    } else {
+    if (classic) {
       const classicBeers = beers.filter(beer => Number(beer.first_brewed.slice(3)) < 2010);
       setBeers(classicBeers);
+    } else {
+      updateBeers("_");
     }
     setClassic(!classic);
   }
 
   const filterAcidity = () => {
-    if (!ph) {
-      updateBeers("_");
-    } else {
+    if (ph) {
       const lowPhBeers = beers.filter(beer => beer.ph < 4);
       setBeers(lowPhBeers);
+    } else {
+      updateBeers("_");
     }
     setPh(!ph);   
   }
