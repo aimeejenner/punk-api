@@ -8,6 +8,8 @@ import getBeers from "./services/beer.service";
 
 const App = () => {
   const [beers, setBeers] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("_");
+
   const [abv, setAbv] = useState(true);
   const [classic, setClassic] = useState(true);
   const [ph, setPh] = useState(true);
@@ -19,20 +21,18 @@ const App = () => {
 
   const filterABV = () => {
     if (abv) {
-      const highABV = beers.filter(beer => beer.abv > 6);
-      setBeers(highABV);
+      setSearchTerm(searchTerm + "&abv_gt=6");
     } else {
-      updateBeers("_");
+      setSearchTerm(searchTerm.replace("&abv_gt=6", ""));
     }
     setAbv(!abv);
   }
 
   const filterClassic = () => {
     if (classic) {
-      const classicBeers = beers.filter(beer => Number(beer.first_brewed.slice(3)) < 2010);
-      setBeers(classicBeers);
+      setSearchTerm(searchTerm + "&brewed_before=01-2010");
     } else {
-      updateBeers("_");
+      setSearchTerm(searchTerm.replace("&brewed_before=01-2010", ""));
     }
     setClassic(!classic);
   }
@@ -48,8 +48,8 @@ const App = () => {
   }
 
 useEffect(() => {
-  updateBeers("_")
-}, []);
+  updateBeers(searchTerm)
+}, [searchTerm]);
 
 
   return (
