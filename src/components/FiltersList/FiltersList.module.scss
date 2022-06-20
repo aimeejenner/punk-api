@@ -8,14 +8,14 @@
     align-items: center;
     margin-bottom: 15px;
 
-    h3 {
+    .heading {
         font-size: 14px;
         margin-right: 10px;
     }
 }
 
 @media all and (min-width: 768px) {
-    .filter h3 {
+    .filter .heading {
         font-size: 18px;
         margin: 5px;
     } 

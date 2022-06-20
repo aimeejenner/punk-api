@@ -8,7 +8,7 @@ const CardList = (props) => {
   
   const getBeersJsx = () => {
     return beers.map((beer) => (
-      <div><Card beer={beer} key={beer.id} /></div>
+      <Card beer={beer} key={beer.id} />
     ))
   }
 

@@ -20,12 +20,12 @@ const Card = (props) => {
   return (
     <div className={styles.card}>
       <img className={styles.image} src={image_url} alt={name} />
-      <h1 className={styles.name}>{name}</h1>
-      <h2 className={styles.tagline}>{tagline}</h2>
+      <h2 className={styles.name}>{name}</h2>
+      <h3 className={styles.tagline}>{tagline}</h3>
       <p className={styles.description}>{shortenDetails(description)}</p>
-      <h3 className={styles.abv}>ABV {abv}</h3>
-      <h3 className={styles.ph}>Ph {ph}</h3>
-      <h3 className={styles.brewed}>First brewed {first_brewed}</h3>
+      <h4 className={styles.abv}>ABV {abv}</h4>
+      <h4 className={styles.ph}>Ph {ph}</h4>
+      <h4 className={styles.brewed}>First brewed {first_brewed}</h4>
     </div>
   )
 }
