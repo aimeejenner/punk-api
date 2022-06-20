@@ -9,7 +9,6 @@ import getBeers from "./services/beer.service";
 const App = () => {
   const [beers, setBeers] = useState([]);
   const [searchTerm, setSearchTerm] = useState("_");
-
   const [abv, setAbv] = useState(true);
   const [classic, setClassic] = useState(true);
   const [ph, setPh] = useState(true);
@@ -42,7 +41,7 @@ const App = () => {
       const lowPhBeers = beers.filter(beer => beer.ph < 4);
       setBeers(lowPhBeers);
     } else {
-      updateBeers("_");
+      updateBeers(searchTerm);
     }
     setPh(!ph);   
   }
