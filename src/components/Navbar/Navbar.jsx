@@ -5,7 +5,7 @@ import SearchBox from "../SearchBox";
 import FiltersList from "../FiltersList";
 
 const Navbar = (props) => {
-  const {updateSearchText, setABVFilter, setClassicFilter, setPhFilter} = props;
+  const {updateSearchText, setABVFilter, setClassicFilter} = props;
 
   return (
     <section className={styles.navbar}>
@@ -13,7 +13,6 @@ const Navbar = (props) => {
       <FiltersList 
         setABVFilter={setABVFilter} 
         setClassicFilter={setClassicFilter} 
-        setPhFilter={setPhFilter} 
       />
     </section>
   )

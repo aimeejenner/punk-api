@@ -4,7 +4,7 @@ import styles from "./FiltersList.module.scss";
 import FilterItem from "../FilterItem";
 
 const FiltersList = (props) => {
-  const { setABVFilter, setClassicFilter, setPhFilter } = props;
+  const { setABVFilter, setClassicFilter } = props;
 
   return (
     <section className={styles.filters}>
@@ -16,11 +16,6 @@ const FiltersList = (props) => {
       <div className={styles.filter}>
         <h3 className={styles.heading}>Classic Range</h3>
         <FilterItem handleFilterChange={setClassicFilter} />
-      </div>
-
-      <div className={styles.filter}>
-        <h3 className={styles.heading}>Low Ph</h3>
-        <FilterItem handleFilterChange={setPhFilter} />
       </div>
     </section>
   )

@@ -11,39 +11,21 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState("_");
   const [abv, setAbv] = useState(true);
   const [classic, setClassic] = useState(true);
-  const [ph, setPh] = useState(true);
 
   const updateBeers = async (searchTerm) => {
     const apiBeers = await getBeers(searchTerm);
+    setSearchTerm(searchTerm);
     setBeers(apiBeers);
   };
 
   const filterABV = () => {
-    if (abv) {
-      setSearchTerm(searchTerm + "&abv_gt=6");
-    } else {
-      setSearchTerm(searchTerm.replace("&abv_gt=6", ""));
-    }
+    abv ? setSearchTerm(searchTerm + "&abv_gt=6") : setSearchTerm(searchTerm.replace("&abv_gt=6", ""));
     setAbv(!abv);
   }
 
   const filterClassic = () => {
-    if (classic) {
-      setSearchTerm(searchTerm + "&brewed_before=01-2010");
-    } else {
-      setSearchTerm(searchTerm.replace("&brewed_before=01-2010", ""));
-    }
+    classic ? setSearchTerm(searchTerm + "&brewed_before=01-2010") : setSearchTerm(searchTerm.replace("&brewed_before=01-2010", ""));
     setClassic(!classic);
-  }
-
-  const filterAcidity = () => {
-    if (ph) {
-      const lowPhBeers = beers.filter(beer => beer.ph < 4);
-      setBeers(lowPhBeers);
-    } else {
-      updateBeers(searchTerm);
-    }
-    setPh(!ph);   
   }
 
 useEffect(() => {
@@ -54,7 +36,7 @@ useEffect(() => {
   return (
     <div className={styles.app}>  
       <section className={styles.nav}>
-        <Navbar updateSearchText={updateBeers} setABVFilter={filterABV} setClassicFilter={filterClassic} setPhFilter={filterAcidity}  />
+        <Navbar updateSearchText={updateBeers} setABVFilter={filterABV} setClassicFilter={filterClassic} />
       </section>
       <section className={styles.content}>
         <Main beers={beers} />
