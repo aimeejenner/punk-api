@@ -20,4 +20,3 @@ export default getBeers;
 
 // high alcohol - https://api.punkapi.com/v2/beers?abv_gt=6
 // classic range - https://api.punkapi.com/v2/beers?brewed_before=01-2010
-// high acidity - return beers where .ph property < 4
