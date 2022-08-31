@@ -1,10 +1,12 @@
 # Punk-API
 
+### A React app which displays beers obtained from Brewdog's Punk API. Users are able to search and filter the beers by ABV and first brewed date.
+
+#### Project Link [_here_](https://aimeejenner.github.io/punk-api/).
+
 <p align="center">
   <img src="/public/punk-api.png" alt="Punk API">
 </p>
-
-### A React app which displays beers obtained from Brewdog's Punk API. Users are able to search and filter the beers by ABV and first brewed date.
 
 ## Description
 
@@ -16,7 +18,8 @@ This React app makes use of Brewdog's Punk API. It allows users to search throug
 | ------------------------------- |
 | [User Story](#UserStory)        |
 | [Functionality](#Functionality) |
-| [Technology](#Technology)       |   
+| [Technology](#Technology)       | 
+| [Testing](#Testing)             |
 
 ---
 
@@ -82,3 +85,7 @@ The beers array is then passed down to the Main, CardList and Card components as
 -   ReactJS
 -   Sass
 -   Brewdog Punk API
+
+## Testing
+
+There is a test file for each component which can be run to check that the component renders correctly.
