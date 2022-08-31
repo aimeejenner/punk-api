@@ -1,7 +1,7 @@
 # Punk-API
 
 <p align="center">
-  <img src="./punk-api.png" alt="Punk API">
+  <img src="/public/punk-api.png" alt="Punk API">
 </p>
 
 ### A React app which displays beers obtained from Brewdog's Punk API. Users are able to search and filter the beers by ABV and first brewed date.
